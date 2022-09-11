@@ -1,0 +1,43 @@
+name: ArcaneDimensions
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Cache fteqcc
+        uses: actions/cache@v3
+        id: cache-dependencies
+        with:
+          path: |
+            fteqcc64
+          key: fteqcc
+
+      - name: Fetch fteqcc
+        run: |
+          curl -Ofteqcc.zip https://www.fteqcc.org/dl/fteqcc_linux64.zip
+          unzip fteqcc_linux64.zip fteqcc64
+        if: steps.cache-dependencies.outputs.cache-hit != 'true'
+
+      - name: Compile ArcaneDimensions
+        run: |
+          ./fteqcc64 progs.src
+          ./fteqcc64 csqc_progs.src
+
+      - name: Collect artifacts
+        run: |
+          mkdir release
+          mv ../progs.dat release/
+          mv ../csprogs.dat release/
+          cp LICENSE release/
+          cp README.md release/
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ArcaneDimensions
+          path: |
+            release/*
