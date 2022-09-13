@@ -4265,3 +4265,90 @@ void() item_artifact_trinity = { item_artifact_nail_piercer(); };
 void() item_artifact_cross = { item_artifact_blastbelt(); };
 
 
+void() item_flag_team1 =
+{
+	local entity item;
+	item = spawn();
+	item.owner = item;
+	item.origin = self.origin;
+	item.flags = FL_ITEM;
+	item.solid = SOLID_TRIGGER;
+	item.movetype = MOVETYPE_TOSS;
+	item.skin = 0;
+	setmodel (item, "progs/flag.mdl");
+	setsize (item, '-16 -16 0', '16 16 74');
+	item.bbmins = '-16 -16 0';
+	item.bbmaxs = '16 16 74';
+	item.classname = "item_flag";
+	item.effects = EF_RED;
+};
+
+void() item_flag_team2 =
+{
+	local entity item;
+	item = spawn();
+	item.owner = item;
+	item.origin = self.origin;
+	item.flags = FL_ITEM;
+	item.solid = SOLID_TRIGGER;
+	item.movetype = MOVETYPE_TOSS;
+	item.skin = 1;
+	setmodel (item, "progs/flag.mdl");
+	setsize (item, '-16 -16 0', '16 16 74');
+	item.bbmins = '-16 -16 0';
+	item.bbmaxs = '16 16 74';
+	item.classname = "item_flag";
+	item.effects = EF_BLUE | EF_DIMLIGHT;
+};
+
+void() item_rune_res =
+{
+	self.origin = (self.origin - '0 0 24');	
+	self.flags = FL_ITEM;
+	self.solid = SOLID_NOT;
+	self.movetype = MOVETYPE_NONE;
+	setmodel (self, "progs/end1.mdl");
+	setsize (self, '-16 -16 0', '16 16 56');
+	self.classname = "item_rune";
+	self.part_active = PARTICLE_STYLE_KEYGREEN;
+	self.part_emitter = spawn_pemitter(self, self, self.part_active, PARTICLE_START_ON);
+};
+
+void() item_rune_str =
+{
+	self.origin = (self.origin - '0 0 24');	
+	self.flags = FL_ITEM;
+	self.solid = SOLID_NOT;
+	self.movetype = MOVETYPE_NONE;
+	setmodel (self, "progs/end2.mdl");
+	setsize (self, '-16 -16 0', '16 16 56');
+	self.classname = "item_rune";
+	self.part_active = PARTICLE_STYLE_KEYRED;
+	self.part_emitter = spawn_pemitter(self, self, self.part_active, PARTICLE_START_ON);
+};
+
+void() item_rune_hst =
+{
+	self.origin = (self.origin - '0 0 24');	
+	self.flags = FL_ITEM;
+	self.solid = SOLID_NOT;
+	self.movetype = MOVETYPE_NONE;
+	setmodel (self, "progs/end3.mdl");
+	setsize (self, '-16 -16 0', '16 16 56');
+	self.classname = "item_rune";
+	self.part_active = PARTICLE_STYLE_KEYGOLD;
+	self.part_emitter = spawn_pemitter(self, self, self.part_active, PARTICLE_START_ON);
+};
+
+void() item_rune_rgn =
+{
+	self.origin = (self.origin - '0 0 24');	
+	self.flags = FL_ITEM;
+	self.solid = SOLID_NOT;
+	self.movetype = MOVETYPE_NONE;
+	setmodel (self, "progs/end4.mdl");
+	setsize (self, '-16 -16 0', '16 16 56');
+	self.classname = "item_rune";
+	self.part_active = PARTICLE_STYLE_KEYPURPLE;
+	self.part_emitter = spawn_pemitter(self, self, self.part_active, PARTICLE_START_ON);
+};
