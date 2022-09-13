@@ -711,12 +711,12 @@ void() item_health =
 		// worldtype 0 = medieval, 1 = metal, 2 = base
 		if (item_skintype(self) == SKIN_MEDIEVAL) {
 			// New Medieval style red flask
-			self.mdl = MODEL_HEAL15;
+			self.mdl = "maps/b_bh10.bsp";
 			self.respawn_style = PARTICLE_BURST_RED + PARTICLE_BURST_RING;
 		}
 		else {
 			// Original ID pickup model
-			self.mdl = MODEL_HEAL15B;
+			self.mdl = "maps/b_bh10.bsp";
 			self.respawn_style = PARTICLE_BURST_WHITE + PARTICLE_BURST_RING;
 		}
 		self.noise = SOUND_HEAL15;
@@ -728,12 +728,12 @@ void() item_health =
 	else if (self.spawnflags & H_MEGA) {
 		if (item_skintype(self) == SKIN_MEDIEVAL) {
 		// New Medieval style red flask
-			self.mdl = MODEL_HEAL100;
+			self.mdl = "maps/b_bh100.bsp";
 			self.respawn_style = PARTICLE_BURST_RED + PARTICLE_BURST_RING;
 		}
 		else {
 			// Original ID pickup model
-			self.mdl = MODEL_HEAL100B;
+			self.mdl = "maps/b_bh100.bsp";
 			self.respawn_style = PARTICLE_BURST_WHITE + PARTICLE_BURST_RING;
 			self.item_skinanim = TRUE;
 		}
@@ -749,13 +749,13 @@ void() item_health =
 	else {
 		if (item_skintype(self) == SKIN_MEDIEVAL) {
 			// New Medieval style red flask
-			self.mdl = MODEL_HEAL25;
+			self.mdl = "maps/b_bh25.bsp";
 			self.respawn_style = PARTICLE_BURST_RED + PARTICLE_BURST_RING;
 			self.respawn_ofs = '0 0 24';
 		}
 		else {
 			// Original ID pickup model
-			self.mdl = MODEL_HEAL25B;
+			self.mdl = "maps/b_bh25.bsp";
 			self.respawn_style = PARTICLE_BURST_WHITE + PARTICLE_BURST_RING;
 			self.respawn_ofs = '0 0 16';
 			self.item_skinanim = TRUE;
@@ -936,7 +936,7 @@ void() item_armor1 =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	// Setup default model
-	if (self.mdl == "") { self.mdl = "progs/armour.mdl"; self.skin = 0; }
+	if (self.mdl == "") { self.mdl = "progs/armor.mdl"; self.skin = 0; }
 	precache_model (self.mdl);
 
 	self.classtype = CT_ARMOR1;
@@ -980,7 +980,7 @@ void() item_armor2 =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	// Setup default model
-	if (self.mdl == "") self.mdl = "progs/armour.mdl";
+	if (self.mdl == "") self.mdl = "progs/armor.mdl";
 	precache_model (self.mdl);
 	
 	self.classtype = CT_ARMOR2;
@@ -1034,7 +1034,7 @@ void() item_armorInv =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	// Setup default model
-	if (self.mdl == "") { self.mdl = "progs/armour.mdl"; self.skin = 2; }
+	if (self.mdl == "") { self.mdl = "progs/armor.mdl"; self.skin = 2; }
 	precache_model (self.mdl);
 
 	self.classtype = CT_ARMORINV;
@@ -1982,12 +1982,12 @@ void() item_shells =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	if (self.spawnflags & A_LARGE) {
-		if (self.mdl == "") self.mdl = "progs/ammo_shells1.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_shell1.bsp";
 		if (self.headmdl == "") self.headmdl = "progs/ammo_lidlarge.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_SHELLS_LGR;
 	}
 	else {
-		if (self.mdl == "") self.mdl = "progs/ammo_shells0.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_shell0.bsp";
 		if (self.headmdl == "") self.headmdl = "progs/ammo_lidsmall.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_SHELLS_SML;
 	}
@@ -2049,12 +2049,12 @@ void() item_spikes =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	if (self.spawnflags & A_LARGE) {
-		if (self.mdl == "") self.mdl = "progs/ammo_nails1.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_nail1.bsp";
 		if (self.headmdl == "") self.headmdl = "progs/ammo_lidlarge.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_NAILS_LGR;
 	}
 	else {
-		if (self.mdl == "") self.mdl = "progs/ammo_nails0.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_nail0.bsp";
 		if (self.headmdl == "") self.headmdl = "progs/ammo_lidsmall.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_NAILS_SML;
 	}
@@ -2115,11 +2115,11 @@ void() item_rockets =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	if (self.spawnflags & A_LARGE) {
-		if (self.mdl == "") self.mdl = "progs/ammo_rockets1.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_rock1.bsp";
 		if (self.aflag < 1) self.aflag = AMMO_ROCKETS_LGR;
 	}
 	else {
-		if (self.mdl == "") self.mdl = "progs/ammo_rockets0.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_rock0.bsp";
 		if (self.aflag < 1) self.aflag = AMMO_ROCKETS_SML;
 	}
 	
@@ -2167,11 +2167,11 @@ void() item_cells =
 	// Check for custom model setup?
 	item_debugcustomdl();
 	if (self.spawnflags & A_LARGE) {
-		if (self.mdl == "") self.mdl = "progs/ammo_battery1.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_batt1.bsp";
 		if (self.aflag < 1) self.aflag = AMMO_CELLS_LGR;
 	}
 	else {
-		if (self.mdl == "") self.mdl = "progs/ammo_battery0.mdl";
+		if (self.mdl == "") self.mdl = "maps/b_batt0.bsp";
 		if (self.aflag < 1) self.aflag = AMMO_CELLS_SML;
 	}
 	
@@ -3096,7 +3096,7 @@ void() item_artifact_invisibility =
 	item_debugcustomdl();
 	// cshifts 100,100,100,100
 	// Original id model = progs/invisibl.mdl
-	if (self.mdl == "") self.mdl = "progs/artifact_invis.mdl";
+	if (self.mdl == "") self.mdl = "progs/invisibl.mdl";
 	precache_model (self.mdl);
 	if (self.noise == "") self.noise = SOUND_ARTINV1;
 	precache_sound (self.noise);
@@ -3141,7 +3141,7 @@ void() item_artifact_invulnerability =
 	item_debugcustomdl();
 	// cshifts 255,255,0,30
 	// Original id model = progs/invulner.mdl
-	if (self.mdl == "") self.mdl = "progs/artifact_pent.mdl";
+	if (self.mdl == "") self.mdl = "progs/invulner.mdl";
 	precache_model (self.mdl);
 	if (self.noise == "") self.noise = SOUND_ARTPENT1;
 	precache_sound (self.noise);
@@ -3185,7 +3185,7 @@ void() item_artifact_super_damage =
 	item_debugcustomdl();
 	// cshifts 0,0,255,30
 	// Original id model = progs/quaddama.mdl
-	if (self.mdl == "") self.mdl = "progs/artifact_quad.mdl";
+	if (self.mdl == "") self.mdl = "progs/quaddama.mdl";
 	precache_model (self.mdl);
 	if (self.noise == "") self.noise = SOUND_ARTQUAD1;
 	precache_sound (self.noise);
