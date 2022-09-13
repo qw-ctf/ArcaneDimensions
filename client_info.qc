@@ -100,11 +100,37 @@ Starting position for deathmatch games
 
 ======================================================================*/
 void() info_player_deathmatch = { 
-	self.classtype = CT_SPAWNDM;
-	if (self.spawnflags & MON_SPAWN_DELAY) self.estate = ESTATE_OFF;
-	else self.estate = ESTATE_ON;
-	// Setup Entity State functionality
-	if (self.targetname != "") self.use = entity_state_use;
+	setmodel (self, "progs/ctfplayer.mdl");
+	self.frame = 13;
+	self.alpha = 0.6;
+};
+
+void() info_player_team1 = { 
+	setmodel (self, "progs/ctfplayer.mdl");
+	self.frame = 13;
+	self.alpha = 0.6;
+	self.skin = 1;
+};
+
+void() info_player_team1_deathmatch = { 
+	setmodel (self, "progs/ctfplayer.mdl");
+	self.frame = 13;
+	self.alpha = 0.6;
+	self.skin = 1;
+};
+
+void() info_player_team2 = { 
+	setmodel (self, "progs/ctfplayer.mdl");
+	self.frame = 13;
+	self.alpha = 0.6;
+	self.skin = 3;
+};
+
+void() info_player_team2_deathmatch = { 
+	setmodel (self, "progs/ctfplayer.mdl");
+	self.frame = 13;
+	self.alpha = 0.6;
+	self.skin = 3;
 };
 
 //======================================================================
