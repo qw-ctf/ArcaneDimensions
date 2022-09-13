@@ -37,12 +37,12 @@ string AMMO_PICKUP = "weapons/lock4.wav";
 // Various bounding boxes for items
 // vector	VEC_ORID_MIN = '0 0 0';
 // vector	VEC_ORID_MAX = '32 32 56';
-vector	VEC_HEAL_MIN = '-16 -16 0';
-vector	VEC_HEAL_MAX = '16 16 56';
+vector	VEC_HEAL_MIN = '0 0 0';
+vector	VEC_HEAL_MAX = '32 32 56';
 vector	VEC_WPNS_MIN = '-16 -16 0';
 vector	VEC_WPNS_MAX = '16 16 56';
-vector	VEC_AMMO_MIN = '-16 -16 0';
-vector	VEC_AMMO_MAX = '16 16 56';
+vector	VEC_AMMO_MIN = '0 0 0';
+vector	VEC_AMMO_MAX = '32 32 56';
 vector	VEC_KEYS_MIN = '-16 -16 -24';
 vector	VEC_KEYS_MAX = '16 16 32';
 vector	VEC_POWR_MIN = '-16 -16 -24';
