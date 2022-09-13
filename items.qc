@@ -773,10 +773,10 @@ void() item_health =
 	// Cannot use global vars because they don't exist at this point
 	// Move the new centered ammo models to match old ammo origin
 	// The default is to move all ammo items to suit original id maps
-	if (query_configflag(SVR_ITEMOFFSET) == FALSE) {
-		self.oldorigin = self.origin + '16 16 0';
-		setorigin(self, self.oldorigin);
-	}
+	//if (query_configflag(SVR_ITEMOFFSET) == FALSE) {
+	//	self.oldorigin = self.origin + '16 16 0';
+	//	setorigin(self, self.oldorigin);
+	//}
 
 	// An old worldspawn key (not used anymore)
 	// This is backward compatibility with this key
@@ -1917,10 +1917,10 @@ void() item_ammo_setup =
 	// Cannot use global vars because they don't exist at this point
 	// Move the new centered ammo models to match old ammo origin
 	// The default is to move all ammo items to suit original id maps
-	if (!query_configflag(SVR_ITEMOFFSET)) {
-		self.oldorigin = self.origin + '16 16 0';
-		setorigin(self, self.oldorigin);
-	}
+	// if (!query_configflag(SVR_ITEMOFFSET)) {
+	//	self.oldorigin = self.origin + '16 16 0';
+	//	setorigin(self, self.oldorigin);
+	//}
 
 	// Setup the skin parameter for ammo boxes
 	self.skin = item_skintype(self);
