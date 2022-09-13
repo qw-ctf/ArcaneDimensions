@@ -299,6 +299,8 @@ void() worldspawn =
 	mod_patch = 1;
 	mod_beta = 0;
 
+	world.no_item_rotate = 1;
+
 	// ID map E3M3 has worldspawn angles set, WTF!?!
 	if (self.angles_y != 0) self.angles = '0 0 0';
 
