@@ -1223,10 +1223,10 @@ void() PlayerPostThink =
 				// Camera Angle Smoothing V2 by Eric Wasylishen
 				//---------------------------------------------------------------------
 				// Initialize last angle (snap to the initial angle)
-				if (!cam_lastanglevalid) {
+				//if (!cam_lastanglevalid) {
 					cam_lastanglevalid = TRUE;
 					cam_lastangle = cam_newangle;
-				}
+				//}
 
 				// Clamp angles to 0-360
 				cam_newangle = vectormod(cam_newangle);
