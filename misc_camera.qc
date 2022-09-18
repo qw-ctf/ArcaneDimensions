@@ -176,7 +176,7 @@ void() misc_camera_bezier_debug =
 	// Find the bezier curve CONTROL point
 	self.attachment2 = find(world, targetname, self.controltarget);
 	// Find the bezier curve END point
-	self.attachment3 = find(world, targetname, self.target);
+	self.attachment3 = find(world, targetname, self.sighttarget);
 
 	// Display debug markers for start/control/end locations
 	spawn_marker(self.origin, SPNMARK_RED);
@@ -489,7 +489,7 @@ void() camera_controller_think =
 				// search for Control Point entity (info_target)
 				self.enemy = find(world, targetname, cam_focus.controltarget);
 				// Need to know next camera location for bezier maths
-				self.oldenemy = find(world, targetname, cam_focus.target);
+				self.oldenemy = find(world, targetname, cam_focus.sighttarget);
 				
 				// Found a control AND next camera entity?
 				// Must find both of these because of the math formula
