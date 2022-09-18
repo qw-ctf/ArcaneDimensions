@@ -375,7 +375,8 @@ void() camera_controller_think =
 					// Found a misc camera?
 					if (self.enemy.classtype == CT_MISCCAM) {
 						self.enemy.movetarget3 = cam_focus;
-						cam_focus = self.enemy;
+						// XXX: Don't update focus until after fadeout has finished. 
+						// cam_focus = self.enemy;
 					}
 					// Next target is not a camera!?!
 					else cam_sequence = CINECAM_SEQ_LAST;
@@ -750,6 +751,10 @@ void() camera_controller_think =
 		if (self.count >= CINECAM_MAXSHIFT) {
 			self.count = CINECAM_MAXSHIFT;
 			cam_active = self.state;
+			// XXX: Don't update focus until after fadeout has finished. 
+			if (self.enemy != world) {
+				cam_focus = self.enemy;
+			}
 		}
 		else if (self.count <= CINECAM_MINSHIFT) {
 			self.count = CINECAM_MINSHIFT;
