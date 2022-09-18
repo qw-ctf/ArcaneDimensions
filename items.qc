@@ -1983,17 +1983,17 @@ void() item_shells =
 	item_debugcustomdl();
 	if (self.spawnflags & A_LARGE) {
 		if (self.mdl == "") self.mdl = "maps/b_shell1.bsp";
-		if (self.headmdl == "") self.headmdl = "progs/ammo_lidlarge.mdl";
+//		if (self.headmdl == "") self.headmdl = "progs/ammo_lidlarge.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_SHELLS_LGR;
 	}
 	else {
 		if (self.mdl == "") self.mdl = "maps/b_shell0.bsp";
-		if (self.headmdl == "") self.headmdl = "progs/ammo_lidsmall.mdl";
+//		if (self.headmdl == "") self.headmdl = "progs/ammo_lidsmall.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_SHELLS_SML;
 	}
 	
 	precache_model (self.mdl);
-	precache_model (self.headmdl);
+//	precache_model (self.headmdl);
 	self.classtype = CT_AMMOSHELLS;
 	if (self.netname == "") self.netname = "box of shells";
 	self.respawn_style = PARTICLE_BURST_YELLOW + PARTICLE_BURST_RING;
@@ -2050,17 +2050,17 @@ void() item_spikes =
 	item_debugcustomdl();
 	if (self.spawnflags & A_LARGE) {
 		if (self.mdl == "") self.mdl = "maps/b_nail1.bsp";
-		if (self.headmdl == "") self.headmdl = "progs/ammo_lidlarge.mdl";
+//		if (self.headmdl == "") self.headmdl = "progs/ammo_lidlarge.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_NAILS_LGR;
 	}
 	else {
 		if (self.mdl == "") self.mdl = "maps/b_nail0.bsp";
-		if (self.headmdl == "") self.headmdl = "progs/ammo_lidsmall.mdl";
+//		if (self.headmdl == "") self.headmdl = "progs/ammo_lidsmall.mdl";
 		if (self.aflag < 1) self.aflag = AMMO_NAILS_SML;
 	}
 	
 	precache_model (self.mdl);
-	precache_model (self.headmdl);
+//	precache_model (self.headmdl);
 	self.classtype = CT_AMMONAILS;
 	if (self.netname == "") self.netname = "box of nails";
 	self.respawn_style = PARTICLE_BURST_WHITE + PARTICLE_BURST_RING;
@@ -4300,6 +4300,16 @@ void() item_flag_team2 =
 	item.classname = "item_flag";
 	item.effects = EF_BLUE | EF_DIMLIGHT;
 };
+
+void() info_flag_team1 =
+{
+    item_flag_team1();
+}
+
+void() info_flag_team2 =
+{
+    item_flag_team2();
+}
 
 void() item_rune_res =
 {

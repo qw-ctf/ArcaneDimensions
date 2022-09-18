@@ -430,6 +430,13 @@ void() worldspawn =
 	precache_sound ("misc/water2.wav");			// swimming
 	precache_sound (SOUND_HEARTBEAT);			// Heartbeat (fast 1s)
 
+    precache_model("progs/flag.mdl");
+    precache_model("progs/end1.mdl");
+    precache_model("progs/end2.mdl");
+    precache_model("progs/end3.mdl");
+    precache_model("progs/end4.mdl");
+    precache_model("progs/misc_empty.mdl");
+
 	precache_model (MODEL_PLAYER);
 	precache_model (MODEL_PLAYER_EYES);
 	precache_model (MODEL_PLAYER_HEAD);
@@ -447,129 +454,12 @@ void() worldspawn =
 	precache_model (SEXP_POISON_MED);		// Poison explosion (Quoth)
 	precache_model (SEXP_ELECTRIC);			// Impact explosion (Quoth)
 	precache_model (SBURST_SMOKE);			// Small puff of smoke (Rubicon2)
-	// Hardly ever used, entity cache it if needed
-	// precache_model (SEXP_ICE_BIG);			// Ice explosion (ne_ruin)
-
-	precache_model (MODEL_PROJ_SMOKE);		// Empty model + smoke trail
-	precache_model (MODEL_PROJ_FLESH);		// SpawnMeatSpray - projectiles.qc
-	precache_model (MODEL_PROJ_FLESHP);		// Poisonous version of meat
-
-	precache_model (MODEL_VWEAP_AXE);		// regular
-	precache_model (MODEL_VWEAP_UPAXE);		// Upgrade - Shadow
-	precache_model (MODEL_VWEAP_GHOOK);		// Upgrade - Grapple Hook
-	precache_model (MODEL_VWEAP_SG);
 	precache_model (MODEL_VWEAP_SSG);
-	precache_model (MODEL_VWEAP_UPSSG);		// Upgrade - Widowmaker
 	precache_model (MODEL_VWEAP_NG);
 	precache_model (MODEL_VWEAP_SNG);
 	precache_model (MODEL_VWEAP_GL);
 	precache_model (MODEL_VWEAP_RL);
 	precache_model (MODEL_VWEAP_LG);
-	precache_model (MODEL_VWEAP_UPLG);		// Upgrade - Plasma Gun
-	
-	// precache_model (MODEL_VWEAP_ZSSG);	// Zerstorer Riot gun
-
-	precache_model ("progs/bolt.mdl");		// for lightning gun
-	precache_model ("progs/bolt2.mdl");		// for lightning gun
-	precache_model ("progs/bolt3.mdl");		// for boss shock
-	precache_model (MODEL_PROJ_PGPLASMA);	// Plasma bolt for PG
-	precache_model (MODEL_PROJ_LIGHTNING2);	// reflected lightning
-	//	precache_model ("progs/lavaball.mdl");	// for testing
-	
-	precache_model (MODEL_PROJ_BEAM);		// Hardcoded grapple beam
-	precache_model (MODEL_PROJ_GHOOK);		// Grapple Hook projectile
-	precache_sound (SOUND_GHOOKFIRE);		// Firing sound
-
-	precache_model (MODEL_PROJ_SHELLC);		// Launch_ShellCasing - projectiles.qc
-	precache_model (MODEL_PROJ_DIAM2);		// Projectile bullets
-	precache_model (MODEL_PROJ_NG);
-	precache_model (MODEL_PROJ_NGRED);		// Reflected nails
-	precache_model (MODEL_PROJ_SNG);
-	precache_model (MODEL_PROJ_GRENADE);
-	// precache_model (MODEL_PROJ_GRENADEGRN);	// Poisonous Grenade
-	precache_model (MODEL_PROJ_ROCKET);
-	precache_model (MODEL_BACKPACK);		// DropBackpack - items.qc
-	
-	//----------------------------------------------------------------------
-	// Pre-cache for MOD stuff
-	//----------------------------------------------------------------------
-	precache_model (MODEL_BROKEN);			// Broken model error
-	precache_model (MODEL_EMPTY);			// Used for info_intermission cameras
-	precache_model (MODEL_CORNER1);			// Dev spawn angle marker
-	
-	precache_model (GIB1_BLOOD);			// New gib - arm/leg
-	precache_model (GIB2_BLOOD);			// New gib - body
-	precache_model (GIB3_BLOOD);			// New gib - slice
-	precache_model (GIB4_BLOOD);			// New gib - small chunk/ball
-	precache_model (GIB5_BLOOD);			// New gib - large chunk/ball
-
-	precache_sound (GIB1_SOUND);			// Monster Gib 1
-	precache_sound (GIB3_SOUND);			// Monster Gib 3
-	precache_sound (GIB5_SOUND);			// Monster Gib 5
-	precache_sound (GIBHIT1_SOUND);			// Gib Impact sound 1
-	precache_sound (GIBHIT2_SOUND);			// Gib Impact sound 2
-	precache_sound (GIBHIT3_SOUND);			// Gib Impact sound 3
-	precache_sound (GIBHIT4_SOUND);			// Gib Impact sound 4
-	precache_sound (GIBHIT5_SOUND);			// Gib Impact sound 5
-	precache_sound (GIBHIT1_STONESOUND);	// long roll
-	precache_sound (GIBHIT3_STONESOUND);	// quick roll
-	precache_sound (GIBHIT5_STONESOUND);	// slow roll
-	precache_sound (GIBHIT1_METALSOUND);	// small clink
-	precache_sound (GIBHIT3_METALSOUND);	// large clank
-	precache_sound (GIBHIT5_METALSOUND);	// gigantic clonk
-	precache_sound (GIB_SOUND_HEAVY);		// Large gib
-	precache_sound (GIB_SOUND_METALA);		// Sword impact
-	precache_sound (GIB_SOUND_METALB);		// Sword impact
-	precache_sound (GIB_SOUND_CHAIN);		// Chain impact
-	precache_sound (GIB_SOUND_WOOD);		// Wooden impact
-	precache_sound (GIB_SOUND_ACID);		// Acid burning
-	precache_sound (GIB_SOUND_SDEATH);		// Stone death
-
-	//----------------------------------------------------------------------
-	// Footstep sounds (slow, light, medium, heavy, large & giant)
-	//----------------------------------------------------------------------
-	precache_sound (SOUND_FS_SLOW1);
-	precache_sound (SOUND_FS_SLOW2);
-	precache_sound (SOUND_FS_SLOW3);
-	precache_sound (SOUND_FS_SLOW4);
-	precache_sound (SOUND_FS_SLOW5);
-
-	precache_sound (SOUND_FS_DRAG1);
-	precache_sound (SOUND_FS_DRAG2);
-	precache_sound (SOUND_FS_DRAG3);
-	precache_sound (SOUND_FS_DRAG4);
-	precache_sound (SOUND_FS_DRAG5);
-
-	precache_sound (SOUND_FS_LIGHT1);
-	precache_sound (SOUND_FS_LIGHT2);
-	precache_sound (SOUND_FS_LIGHT3);
-	precache_sound (SOUND_FS_LIGHT4);
-	precache_sound (SOUND_FS_LIGHT5);
-
-	precache_sound (SOUND_FS_MEDIUM1);
-	precache_sound (SOUND_FS_MEDIUM2);
-	precache_sound (SOUND_FS_MEDIUM3);
-	precache_sound (SOUND_FS_MEDIUM4);
-	precache_sound (SOUND_FS_MEDIUM5);
-
-	precache_sound (SOUND_FS_HEAVY1);
-	precache_sound (SOUND_FS_HEAVY2);
-	precache_sound (SOUND_FS_HEAVY3);
-	precache_sound (SOUND_FS_HEAVY4);
-	precache_sound (SOUND_FS_HEAVY5);
-
-	precache_sound (SOUND_FS_LARGE1);
-	precache_sound (SOUND_FS_LARGE2);
-	precache_sound (SOUND_FS_LARGE3);
-	precache_sound (SOUND_FS_LARGE4);
-	precache_sound (SOUND_FS_LARGE5);
-
-	precache_sound (SOUND_FS_GIANT1);
-	precache_sound (SOUND_FS_GIANT2);
-	precache_sound (SOUND_FS_GIANT3);
-	precache_sound (SOUND_FS_GIANT4);
-	precache_sound (SOUND_FS_GIANT5);
-
 	//----------------------------------------------------------------------
 	// Check for engine type and extensions (different features)
 	//----------------------------------------------------------------------

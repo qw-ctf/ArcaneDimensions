@@ -100,36 +100,41 @@ Starting position for deathmatch games
 
 ======================================================================*/
 void() info_player_deathmatch = { 
-	setmodel (self, "progs/ctfplayer.mdl");
+    precache_model (MODEL_CTFPLAYER);
+	setmodel (self, MODEL_CTFPLAYER);
 	self.frame = 13;
-	self.alpha = 0.6;
+	self.alpha = 0.4;
 };
 
 void() info_player_team1 = { 
-	setmodel (self, "progs/ctfplayer.mdl");
+    precache_model (MODEL_CTFPLAYER);
+	setmodel (self, MODEL_CTFPLAYER);
 	self.frame = 13;
-	self.alpha = 0.6;
+	self.alpha = 0.4;
 	self.skin = 1;
 };
 
 void() info_player_team1_deathmatch = { 
-	setmodel (self, "progs/ctfplayer.mdl");
+    precache_model (MODEL_CTFPLAYER);
+	setmodel (self, MODEL_CTFPLAYER);
 	self.frame = 13;
-	self.alpha = 0.6;
+	self.alpha = 0.4;
 	self.skin = 1;
 };
 
 void() info_player_team2 = { 
-	setmodel (self, "progs/ctfplayer.mdl");
+    precache_model (MODEL_CTFPLAYER);
+	setmodel (self, MODEL_CTFPLAYER);
 	self.frame = 13;
-	self.alpha = 0.6;
+	self.alpha = 0.4;
 	self.skin = 3;
 };
 
 void() info_player_team2_deathmatch = { 
-	setmodel (self, "progs/ctfplayer.mdl");
+    precache_model (MODEL_CTFPLAYER);
+	setmodel (self, MODEL_CTFPLAYER);
 	self.frame = 13;
-	self.alpha = 0.6;
+	self.alpha = 0.4;
 	self.skin = 3;
 };
 
